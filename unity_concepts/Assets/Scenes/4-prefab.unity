@@ -635,7 +635,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1173914166702361849, guid: ebb4730f52b1738469a8430ed193d801, type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: Ball
       objectReference: {fileID: 0}
     - target: {fileID: 1173914166702361853, guid: ebb4730f52b1738469a8430ed193d801, type: 3}
       propertyPath: m_RootOrder
