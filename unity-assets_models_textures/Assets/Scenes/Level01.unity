@@ -1825,10 +1825,10 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2113843087}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc5952fe835f3334aa6747876d164a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 15
   player: {fileID: 1285720851}
-  offset: {x: 0, y: 0, z: 0}
