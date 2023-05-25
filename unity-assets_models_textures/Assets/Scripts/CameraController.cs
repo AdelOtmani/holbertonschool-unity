@@ -16,12 +16,13 @@ void Update ()
 
 void FixedUpdate ()
     {
+		//with no right clic pressed
 		offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * sensitivity, Vector3.up) * offset;
 		Vector3 newPosition = player.position + offset;
 		transform.position = newPosition;
         transform.LookAt(player.position);
 		player.Rotate(Input.GetAxis("Mouse X") * sensitivity * Vector3.up);
-		//if (Input.GetMouseButton(0))
+		//if (Input.GetMouseButton(0)) use when the right clic is pressed
 		//{
 		//	float rotateHorizontal = Input.GetAxis ("Mouse X");
         //	transform.Rotate(player.transform.position * rotateHorizontal * sensitivity);
