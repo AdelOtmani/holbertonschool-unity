@@ -960,11 +960,6 @@ MonoBehaviour:
   speed: 1500
   Rb: {fileID: 1285720852}
   jumpforce: 50
---- !u!4 &1285720851 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4830187521521144, guid: 384c7cebba67d594fa271a57acccdf8a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1007151129}
 --- !u!54 &1285720852
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1830,5 +1825,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5952fe835f3334aa6747876d164a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 15
-  player: {fileID: 1285720851}
+  target: {fileID: 1285720846}
