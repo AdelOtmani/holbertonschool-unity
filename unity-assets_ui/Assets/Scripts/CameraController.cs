@@ -1,33 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class CameraController : MonoBehaviour {
+public class CameraController : MonoBehaviour
+{
+    private Transform t;
+    private Vector3 offset;
 
-public float sensitivity = 5;
-public Transform player;
-private Vector3 offset;
+    public GameObject player;
+    public float turnSpeed = 5.0f;
+    public Toggle InvertedYMode;
+    public bool isInverted = false;
+    private int inverted;
 
-    // Update is called once per frame
-void Update ()
-	{
-        transform.position = player.transform.position + new Vector3(0, 1, -10);
+    // Start is called before the first frame update
+    void Start()
+    {
+        if (InvertedYMode)
+            isInverted = true;
+        t = GetComponent<Transform>();
+        offset = t.position - player.transform.position;
     }
 
-void FixedUpdate ()
+    // Update is called once per frame
+    void Update()
     {
-		//with no right clic pressed
-		offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * sensitivity, Vector3.up) * offset;
-		Vector3 newPosition = player.position + offset;
-		transform.position = newPosition;
-        transform.LookAt(player.position);
-		player.Rotate(Input.GetAxis("Mouse X") * sensitivity * Vector3.up);
-		//if (Input.GetMouseButton(0)) use when the right clic is pressed
-		//{
-		//	float rotateHorizontal = Input.GetAxis ("Mouse X");
-        //	transform.Rotate(player.transform.position * rotateHorizontal * sensitivity);
+        if (isInverted)
+                    inverted = -1;
+        else
+                    inverted = 1;
 
-		//}
-
+        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * inverted * turnSpeed, Vector3.left) * offset;
+        t.position = player.transform.position + offset;
+        transform.LookAt(player.transform.position);
     }
 }
