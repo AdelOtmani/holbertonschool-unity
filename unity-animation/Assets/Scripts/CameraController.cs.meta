@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cc5952fe835f3334aa6747876d164a15
+timeCreated: 1684931198
+licenseType: Pro
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
